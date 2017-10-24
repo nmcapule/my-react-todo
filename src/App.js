@@ -1,3 +1,5 @@
+// @flow
+// TODO(nmcapule@gmail.com): Fix Flow errors.
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
