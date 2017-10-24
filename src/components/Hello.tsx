@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './Hello.css';
 
 export interface Props {
   name: string;
@@ -15,6 +16,7 @@ function Hello({ name, enthusiasmLevel = 1}: Props) {
       <div className="greeting">
         Hello {name + getExclamationMarks(enthusiasmLevel)}
       </div>
+      <button>Hello too!</button>
     </div>
   );
 }
