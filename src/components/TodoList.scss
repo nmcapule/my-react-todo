@@ -1,11 +1,9 @@
 .todo-list {
   display: block;
-
   .input {
-
   }
-
   .item {
+    cursor: pointer;
     &.-completed {
       color: gray;
     }

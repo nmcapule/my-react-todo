@@ -11,7 +11,13 @@ export interface RemoveTodo {
   todo: Todo;
 }
 
-export type TodoAction = AddTodo | RemoveTodo;
+export interface ToggleTodo {
+  type: constants.TOGGLE_TODO;
+  todo: Todo;
+}
+
+export type TodoAction = AddTodo | RemoveTodo | ToggleTodo;
 
 export const addTodo = (todo: Todo) => ({ type: constants.ADD_TODO, todo });
 export const removeTodo = (todo: Todo) => ({ type: constants.REMOVE_TODO, todo });
+export const toggleTodo = (todo: Todo) => ({ type: constants.TOGGLE_TODO, todo });
