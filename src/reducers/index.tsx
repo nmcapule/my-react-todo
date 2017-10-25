@@ -1,13 +1,13 @@
-import { EnthusiasmAction } from '../actions';
+import { TodoAction } from '../actions';
 import { StoreState } from '../types/index';
-import { INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM } from '../constants/index';
+import { ADD_TODO, REMOVE_TODO } from '../constants/index';
 
-export function enthusiasm(state: StoreState, action: EnthusiasmAction): StoreState {
+export function todos(state: StoreState, action: TodoAction): StoreState {
   switch (action.type) {
-    case INCREMENT_ENTHUSIASM:
-      return { ...state, enthusiasmLevel: state.enthusiasmLevel + 1 };
-    case DECREMENT_ENTHUSIASM:
-      return { ...state, enthusiasmLevel: Math.max(1, state.enthusiasmLevel - 1) };
+    case ADD_TODO:
+      return {...state, todos: [action.todo, ...state.todos]};
+    case REMOVE_TODO:
+      return {...state, todos: state.todos.filter(todo => todo !== action.todo)};
     default:
       return state;
   }

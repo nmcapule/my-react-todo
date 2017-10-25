@@ -1,23 +1,17 @@
 import * as constants from '../constants';
+import { Todo } from '../types';
 
-export interface IncrementEnthusiasm {
-  type: constants.INCREMENT_ENTHUSIASM;
+export interface AddTodo {
+  type: constants.ADD_TODO;
+  todo: Todo;
 }
 
-export interface DecrementEnthusiasm {
-  type: constants.DECREMENT_ENTHUSIASM;
+export interface RemoveTodo {
+  type: constants.REMOVE_TODO;
+  todo: Todo;
 }
 
-export type EnthusiasmAction = IncrementEnthusiasm | DecrementEnthusiasm;
+export type TodoAction = AddTodo | RemoveTodo;
 
-export function incrementEnthusiasm(): IncrementEnthusiasm {
-  return {
-    type: constants.INCREMENT_ENTHUSIASM
-  };
-}
-
-export function decrementEnthusiasm(): DecrementEnthusiasm {
-  return {
-    type: constants.DECREMENT_ENTHUSIASM
-  };
-}
+export const addTodo = (todo: Todo) => ({ type: constants.ADD_TODO, todo });
+export const removeTodo = (todo: Todo) => ({ type: constants.REMOVE_TODO, todo });

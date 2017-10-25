@@ -1,0 +1,13 @@
+.todo-list {
+  display: block;
+
+  .input {
+
+  }
+
+  .item {
+    &.-completed {
+      color: gray;
+    }
+  }
+}
